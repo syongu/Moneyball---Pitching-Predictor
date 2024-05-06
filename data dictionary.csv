@@ -1,0 +1,109 @@
+﻿Column Name,Description
+ab_id,at-bat ID. First 4 digits are year. Matches with ab_id in pitches.csv
+batter_id,"player ID of the batter. Given by MLB, player names found in player_names.csv"
+event,description of the result of the at-bat
+g_id,game ID. First 4 digits are year
+inning,inning number
+o,number of outs *after* this at-bat
+p_score,score for the pitcher's team
+p_throws,"which hand pitcher throws with. Single character, R or L"
+pitcher_id,"player ID of the pitcher. Given by MLB, player names found in player_names.csv"
+stand,"which side batter hits on. Single character, R or L"
+top,"True if it's the top of the inning, False if it's the bottom"
+attendance,"number of fans who attended (NOTE: for first game of doubleheaders, value is often erroneously 1 or 0. This comes directly from XML files. This data may not be recorded for those games; MLB gameday pages do not report attendance for these game)"
+away_final_score,final score for the visiting team
+away_team,three letter abbreviation for away team; third letter often indicates league(national vs american)
+date,date of game
+elapsed_time,"length of game, in minutes"
+g_id,game ID. Matches with game_id in atbats.csv
+home_final_score,final score for the home team
+home_team,three letter abbreviation for home team; third letter often indicates league(national vs american)
+start_time,start time of game
+umpire_1B,
+umpire_2B,
+umpire_3B,
+umpire_HP,
+venue_name,
+weather,description of weather
+wind,description of wind
+delay,"length of delay before game, in minutes"
+px,x-location as pitch crosses the plate. X=0 means right down the middle. (Used by Statcast)
+pz,z-location as pitch crosses the plate. Z=0 means the ground. (Used by Statcast)
+start_speed,Speed of the pitch just as it's thrown
+end_speed,Speed of the pitch when it reaches the plate
+spin_rate,"The pitch's spin rate, measure in RPM"
+spin_dir,"Direction in which pitch is spinning, measured in degrees"
+break_angle,
+break_length,
+break_y,
+ax,"The acceleration (how much speed is changing) of the pitch in the left-right direction, 50 feet before the front of home plate."
+ay,"The acceleration (how much speed is changing) of the pitch in the direction toward home plate, 50 feet before the front of home plate."
+az,"The acceleration (how much speed is changing) of the pitch in the up-down direction, 50 feet before the front of home plate."
+sz_bot,The batter's bottom-of-zone boundary.
+sz_top,The batter's top-of-zone boundary.
+type_confidence,Confidence in pitch_type classification. Goes up to 2 for some reason.
+vx0,"The velocity (speed) of the pitch in the left-right direction, 50 feet before the front of home plate."
+vy0,"The velocity (speed) of the pitch in the direction toward home plate, 50 feet before the front of home plate."
+vz0,"The velocity (speed) of the pitch in the up-down direction, 50 feet before the front of home plate."
+x,X coordinate where pitch crossed front of home plate in pixels from the origin. (Used by Gameday)
+x0,"The horizontal (left-right) location of the pitch 50 feet before the front of home plate. Positive numbers are toward the 1B side, while negative numbers are toward the 3B side, relative to a straight line drawn from the tip of home plate to the center of the rubber."
+y,Y coordinate where pitch crossed front of home plate in pixels from the origin. (Used by Gameday)
+y0,"The distance from home plate, along a straight line drawn from the tip of home plate to the center of the rubber, 50 feet before the front of home plate. By definition this will always be 50 feet."
+z0,"The height of the pitch, relative to home plate, 50 feet before the front of home plate."
+pfx_x,"The horizontal (left-right) movement of the pitch during the last 40 feet before the front of home plate, as compared to a theoretical pitch thrown at the same speed with no spin-induced movement."
+pfx_z,"The vertical (up-down) movement of the pitch during the last 40 feet before the front of home plate, as compared to a theoretical pitch thrown at the same speed with no spin-induced movement."
+nasty,Measureing the degree of how nasty a pitch is thrown
+zone,The specific strike zone that the pitch crosses the home plate. Zone 1-9 are in the strike zone. Zone 11-14 are outside the stike zone
+code,Records the result of the pitch. See dataset description for list of codes and their meaning
+type,"Simplified code, S (strike) B (ball) or X (in play)"
+pitch_type,Type of pitch. See dataset description for list of pitch types
+event_num,"event number, used for finding when exactly ejections happen."
+b_score,score for the batter's team
+ab_id,at-bat ID. Matches up with atbats.csv
+b_count,balls in the current count
+s_count,strikes in the current count
+outs,number of outs (before pitch is thrown)
+pitch_num,pitch number (of at-bat)
+on_1b,"True if there's a runner on first, False if empty"
+on_2b,"True if there's a runner on second, False if empty"
+on_3b,"True if there's a runner on third, False if empty"
+,
+Type code,Description
+B,Ball
+*B,Ball in dirt
+S,Swinging Strike
+C,Called Strike
+F,Foul
+T,Foul Tip
+L,Foul Bunt
+I,Intentional Ball
+W,Swinging Strike (Blocked)
+M,Missed Bunt
+P,Pitchout
+Q,Swinging pitchout
+R,Foul pitchout
+Values that only occur on last pitch of at-bat:,
+X,"In play, out(s)"
+D,"In play, no out"
+E,"In play, runs"
+H,Hit by pitch
+,
+Pitch code,Description
+CH,Changeup
+CU,Curveball
+EP,Eephus*
+FC,Cutter
+FF,Four-seam Fastball
+FO,Pitchout (also PO)*
+FS,Splitter
+FT,Two-seam Fastball
+IN,Intentional ball
+KC,Knuckle curve
+KN,Knuckeball
+PO,Pitchout (also FO)*
+SC,Screwball*
+SI,Sinker
+SL,Slider
+UN,Unknown*
+FA,Four-seam Fastball
+AB,Automatic balls (Intentional Walk)
