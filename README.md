@@ -13,8 +13,8 @@ In 2019, Houston Astros were found cheating by stealing signals with prohibited 
 
 ### How to tackle the problem area(legally)
 First, each pitches only have 2-3 types of the pitches that they are good at. We can examine the data at at-bat level, game level and player level to find:
-* For pitchers equipped with certain types of pitches, what's the general pattern of throw?
-* In certain senerios, will they use a similar pitching strategy?
+* For pitchers equipped with certain types of pitches, what's the general pattern of pitching?
+* In certain senerios, will they use a similar pitching strategy in terms of pitch type and location?
 * Would it be possible to narrow down the habit/strategy to specific pitcher?
 
 
@@ -25,22 +25,34 @@ The dataset comes from [MLB Pitch Data 2015-2018](https://www.kaggle.com/dataset
 * pz: z-location as pitch crosses the plate. Z=0 means the ground.
 * zone: The specific strike zone that the pitch crosses the home plate. Zone 1-9 are in the strike zone. Zone 11-14 are outside the stike zone.
 * pitch_type: Type of pitch. See data dictionary for list of pitch types.
+
+Some important attributes to use as independent variables are:
 * code: Records the result of the pitch. See data dictionary for list of codes and their meaning
 * type: Simplified code of the result of the pitch, S (strike) B (ball) or X (in play)
+* outs: Number of outs before pitch is thrown
+* pitch_number: number of the pitchs in the current at-bat
+* on_1b/2b/3b: if there's runner on 1st,2nd or 3rd bases.
+* stand: which side batter hits on
+* p_throws: which hand pitcher thrown with
+* b_score and p_score: score for the batter's/pitcher's team
+* b_count: ball in the current count
+* s_count: strike in the current count
 
-A data dictionary has been created in /dataset for the definition of the columns.
+A data dictionary has been created in dataset folder for the definition of the columns.
 
 ## Feature Engineering Opportunity
 Below list will be used as a guideline to develop columns that help with the project:
-- [ ] Add the current pitcher's pitch count
+- [ ] Add the current pitcher's pitch count through the game
 - [ ] Determine if a pitcher is starting pitcher or relief pitcher
 - [ ] Show the previous pitch type and location
+- [ ] Include the previous pitch's result (type/code column from last row)
+- [ ] Include the previous at-bat result (type/code column before pitch_number goes back to 1)
 - [ ] Narrow the dataframe to player-level. Would we have enough data for most of the player?
 - [ ] Visualize the strike zone map
 - [ ] There are rows with "placeholder" in zone column. We can use px and pz to find which strike zone it is.
 
 
-## Things to look into:
+## Hypothesis to look into:
 - [ ] Do pithcers pitch differently against lefty and righty?
 - [ ] Do pitchers pitch differently with/without runner on bases?
 - [ ] Do pitchers pitch differently when leading/trailing?
