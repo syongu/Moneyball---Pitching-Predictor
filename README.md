@@ -52,7 +52,6 @@ Below list will be used as a guideline to develop columns that help with the pro
 - [x] Visualize the strike zone map
 - [x] There are rows with "placeholder" in zone column. We can use px and pz to find which strike zone it is.
 - [x] Weather
-- [ ] 
 
 
 ## Hypothesis to look into:
