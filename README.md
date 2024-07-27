@@ -42,14 +42,17 @@ A data dictionary has been created in dataset folder for the definition of the c
 
 ## Feature Engineering Opportunity
 Below list will be used as a guideline to develop columns that help with the project:
-- [ ] Add the current pitcher's pitch count through the game
-- [ ] Determine if a pitcher is starting pitcher or relief pitcher
-- [ ] Show the previous pitch type and location
-- [ ] Include the previous pitch's result (type/code column from last row)
-- [ ] Include the previous at-bat result (type/code column before pitch_number goes back to 1)
+- [x] Add the current pitcher's pitch count through the game
+- [x] Determine if a pitcher is starting pitcher or relief pitcher
+- [x] Show the previous pitch type
+- [ ] Show the previous pitch location
+- [x] Include the previous pitch's result (type/code column from last row)
+- [x] Include the previous at-bat result (type/code column before pitch_number goes back to 1)
 - [ ] Narrow the dataframe to player-level. Would we have enough data for most of the player?
-- [ ] Visualize the strike zone map
-- [ ] There are rows with "placeholder" in zone column. We can use px and pz to find which strike zone it is.
+- [x] Visualize the strike zone map
+- [x] There are rows with "placeholder" in zone column. We can use px and pz to find which strike zone it is.
+- [x] Weather
+- [ ] 
 
 
 ## Hypothesis to look into:
@@ -57,8 +60,30 @@ Below list will be used as a guideline to develop columns that help with the pro
 - [ ] Do pitchers pitch differently with/without runner on bases?
 - [ ] Do pitchers pitch differently when leading/trailing?
 - [ ] If a hitter's hitting heatmap can be generated, will the pitcher attack the hitter's weak zone?
+          Update: hitting's hitting performance would be considered as future information, thus not applicable.
 - [ ] Without previous pitch information, how to find a pattern for the first pitch of each at-bat?
 
+## Baseline Model
 
+Currently recurrent neural network is used as the baseline model. The purpose is to capture the play-by-play characteristics of the data source with other features representing the in-game situation. The clean data will be split by each at-bat id, further split into sequenced data and loaded into the model for training. Both pitch type and pitch location will share the same features in the dataframe, use different layers and generate prediction.
+
+### Baseline Model Performance
+
+Horrible is not enough to describle the performance. Once tensor is fed into the model, it generates identical vectors in the tensor for each prediction. As a result, the model predict the same probability for each classes in prediction, thus always making predicting the same value. This would have no real-life application.
+
+## Next Step
+
+As the result of the baseline model is not good, there are some options left for Sprint 3:
+
+### Fine-tuning the model
+
+There's a chance that this model can be fixed. Some areas to consider include:
+- Remove/bring back existing features
+- Change some parameters
+- Deal with class imbalance with approaches other than class weight
+
+### Apply Softmax Regression
+
+Softmax regression is a kind of the logistics regression that is able to handle multiple-class target variable.
 
 
