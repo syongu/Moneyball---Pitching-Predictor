@@ -53,6 +53,11 @@ Below list will be used as a guideline to develop columns that help with the pro
 - [x] There are rows with "placeholder" in zone column. We can use px and pz to find which strike zone it is.
 - [x] Weather
 
+## Data Cleaning
+
+- To preserve the sequence of pitches, if one row is missing necessary value, the entire game data from this pitcher in the game will be excluded from the analysis. Around 30,000 rows are removed.
+- For missing weather, cloudy is to assume weather has no influence on these games.
+- Many columns are removed as they are either too high-level or not related to the project.
 
 ## Hypothesis to look into:
 - [ ] Do pithcers pitch differently against lefty and righty?
@@ -61,6 +66,7 @@ Below list will be used as a guideline to develop columns that help with the pro
 - [ ] If a hitter's hitting heatmap can be generated, will the pitcher attack the hitter's weak zone?
           Update: hitting's hitting performance would be considered as future information, thus not applicable.
 - [ ] Without previous pitch information, how to find a pattern for the first pitch of each at-bat?
+
 
 ## Baseline Model
 
