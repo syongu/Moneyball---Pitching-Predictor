@@ -62,7 +62,6 @@ Below list will be used as a guideline to develop columns that help with the pro
 Below models have been tested with different train data processed by class imbalanced handling method and clustering.
 - RNN Model
 - Logistic Regression Model
-- Decision Tree
 - Xgboost
 - Random Forest
 - Ensemble learning (Logistic Regression Model + random forest)
@@ -70,10 +69,11 @@ Below models have been tested with different train data processed by class imbal
 Below is a quick summary in terms of accuracy:
 | Accuracy      | Ball/Strike Prediction| Pitch Type Prediction |
 | ------------- |:-------------:|  ----------------------------:|
-|   RNN Model   | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-| zebra stripes | are neat      |    $1 |
+|   RNN Model   | 0.54 | 0.43 |
+| Logistic Regression| 0.54 | 0.42 |
+| XGboost       | 0.60 | - |
+| Random Forest | 0.54 | 0.45 |
+| Ensemble Learning | 0.54 | - |
 
 ### Findings and Conclusions
 
