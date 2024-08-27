@@ -40,28 +40,40 @@ A data dictionary has been created in dataset folder for the definition of the c
 
 ### Data Cleaning
 
-- To preserve the sequence of pitches, if one row is missing necessary value, the entire game data from this pitcher in the game will be excluded from the analysis. Around 30,000 rows are removed.
-- For missing weather, cloudy is to assume weather has no influence on these games.
-- Many columns are removed as they are either too high-level or not related to the project.
+- To preserve the sequence of pitches, The entire game data from this pitcher in a game will be removed if we are missing data. Around 30,000 rows are removed.
+- Many columns are removed as they are either not related or the result.
+- There are rows with "placeholder" in zone column. We used px and pz to find which strike zone it is.
 
 ### Feature Engineering Opportunity
 Below list will be used as a guideline to develop columns that help with the project:
 - [x] Add the current pitcher's pitch count through the game
 - [x] Determine if a pitcher is starting pitcher or relief pitcher
 - [x] Show the previous pitch type
-- [ ] Show the previous pitch location
-- [x] Include the previous pitch's result (type/code column from last row)
+- [x] Show the previous pitch location
+- [x] Include the previous pitch's result (type column in simplified version from last row)
 - [x] Include the previous at-bat result (type/code column before pitch_number goes back to 1)
-- [ ] Narrow the dataframe to player-level. Would we have enough data for most of the player?
 - [x] Visualize the strike zone map
-- [x] There are rows with "placeholder" in zone column. We can use px and pz to find which strike zone it is.
 - [x] Weather
 
 ### Exploratory Data Analysis (EDA)
 
 ### Modeling
 
-We applied 
+Below models have been tested with different train data processed by class imbalanced handling method and clustering.
+- RNN Model
+- Logistic Regression Model
+- Decision Tree
+- Xgboost
+- Random Forest
+- Ensemble learning (Logistic Regression Model + random forest)
+
+Below is a quick summary in terms of accuracy:
+| Accuracy      | Ball/Strike Prediction| Pitch Type Prediction |
+| ------------- |:-------------:|  ----------------------------:|
+|   RNN Model   | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+| zebra stripes | are neat      |    $1 |
 
 ### Findings and Conclusions
 
