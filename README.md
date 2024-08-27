@@ -56,7 +56,7 @@ Below list will be used as a guideline to develop columns that help with the pro
 - [x] Weather
 
 ### Exploratory Data Analysis (EDA)
-
+S
 ### Modeling
 
 Below models have been tested with different train data processed by class imbalanced handling method and clustering.
@@ -75,7 +75,7 @@ Below is a quick summary in terms of accuracy:
 | Random Forest | 0.54 | 0.45 |
 | Ensemble Learning | 0.54 | - |
 
-### Findings and Conclusions
+## Findings and Conclusions
 
 There's a chance that this model can be fixed. Some areas to consider include:
 - Remove/bring back existing features
