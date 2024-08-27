@@ -56,6 +56,7 @@ Below list will be used as a guideline to develop columns that help with the pro
 - [x] Weather
 
 ### Exploratory Data Analysis (EDA)
+
 S
 ### Modeling
 
@@ -75,12 +76,18 @@ Below is a quick summary in terms of accuracy:
 | Random Forest | 0.54 | 0.45 |
 | Ensemble Learning | 0.54 | - |
 
+### Cluster
+
+To better capture the pitchers' "habit", K-mean clustering is conducted for all 1511 pitchers. They are divided into 3 groups and will have models with different parameters for prediction.
+| Accuracy      | Ball/Strike Model| Accuracy | Pitch Type Model| Accuracy |
+| ------------- |:-------------:|:-------------:|:-------------:|:-------------:|
+|   Cluster 1   | Ensemble Learning | 0.55 |Logistic Regression| 0.43|
+|   Cluster 2   | Ensemble learning | 0.53 |Random Forest| 0.40|
+|   Cluster 3   | Ensemble learning | 0.54 |Logistic Regression|0.43|
+
 ## Findings and Conclusions
 
-There's a chance that this model can be fixed. Some areas to consider include:
-- Remove/bring back existing features
-- Change some parameters
-- Deal with class imbalance with approaches other than class weight
+It appears that 55% and 45% is the ceiling for predicting 
 
 
 
