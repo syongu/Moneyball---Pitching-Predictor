@@ -57,7 +57,9 @@ Below list will be used as a guideline to develop columns that help with the pro
 
 ### Exploratory Data Analysis (EDA)
 
-S
+- Some exploration and analysis on classic game scenarios has been conducted to understand the distribution and relationship.
+- After logistic regression on ball/strike is conducted, coefficients are looked at to determine effective factors.
+
 ### Modeling
 
 Below models have been tested with different train data processed by class imbalanced handling method and clustering.
@@ -76,19 +78,29 @@ Below is a quick summary in terms of accuracy:
 | Random Forest | 0.54 | 0.45 |
 | Ensemble Learning | 0.54 | - |
 
+Considering the accuracy, class imbalance and ease to use, our first choice for general prediction would be ensemble learning for strike/zone and logistic regression for pitch type.
+
 ### Cluster
 
 To better capture the pitchers' "habit", K-mean clustering is conducted for all 1511 pitchers. They are divided into 3 groups and will have models with different parameters for prediction.
-| Accuracy      | Ball/Strike Model| Accuracy | Pitch Type Model| Accuracy |
-| ------------- |:-------------:|:-------------:|:-------------:|:-------------:|
-|   Cluster 1   | Ensemble Learning | 0.55 |Logistic Regression| 0.43|
-|   Cluster 2   | Ensemble learning | 0.53 |Random Forest| 0.40|
-|   Cluster 3   | Ensemble learning | 0.54 |Logistic Regression|0.43|
+| Accuracy      |Number of Pitcher| Ball/Strike Model| Accuracy | Pitch Type Model| Accuracy |
+| ------------- |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
+|   Cluster 1   |1007| Ensemble Learning | 0.55 |Logistic Regression| 0.43|
+|   Cluster 2   |383| Ensemble learning | 0.53 |Random Forest| 0.40|
+|   Cluster 3   |121|Ensemble learning | 0.54 |Logistic Regression|0.43|
 
-## Findings and Conclusions
+## Findings 
 
-It appears that 55% and 45% is the ceiling for predicting 
+It appears that 55% is the accuracy ceiling for predicting ball/strike and 45% for pitch type. Given that batter has at least three chance to make a hit, the chance of both models making correct prediction at least once in three attempts is 57.5%.
 
+- RNN model appears to be the model with most potential. However, it can only make predictions after two pitches with the constrain of sequence length.
+- Different models give  a different focus on precision and recall. Some sacrifices the minority class prediction while some acrifices the majority class prediction.
 
+## Limits
+- More features are needed. This project only looked at pitcher's side of story. Each batter has their "sweet zone", "sweet pitch" that they can hit great. As baseball is a game, we need to study both sides. 
+- Data quality can be improved. As mentioned, the strike/ball total looks different from real-life. Users also can't figure out how correctly the pitch type is recorded.
+- Advanced Models: Potentially ensemble learning combining different models will yield a better result
+- Evaluation: The best models were chosen with a balanced focus on all classes. If players want to "attack" a specific type of pitch or area, models should be fine-tuned.
+- More data/features on pitcher is needed. It includes advanced pitching stats for better clustering result.
 
 
