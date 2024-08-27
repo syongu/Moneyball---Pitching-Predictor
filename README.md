@@ -16,10 +16,10 @@ In 2019, Houston Astros were found cheating by stealing signals with prohibited 
 The dataset comes from [MLB Pitch Data 2015-2018](https://www.kaggle.com/datasets/pschale/mlb-pitch-data-20152018/data?select=atbats.csv). It records the every pitch information for MLB games from 2015 to 2019. Each row represents a pitch thrown in the game, and each column represents one kind of information. Some key attribute includes:
 * zone: The specific strike zone that the pitch crosses the home plate. Zone 1-9 are in the strike zone as a strike. Zone 11-14 are outside the stike zone as a ball.
 * pitch_type: Type of pitch. See data dictionary for list of pitch types. We're simplifing it to four classes:
- * Four Seam Fastball
- * Other Fastball
- * Breaking Ball
- * Off-Speed
+  * Four Seam Fastball
+  * Other Fastball
+  * Breaking Ball
+  * Off-Speed
 
 Some important attributes to use as independent variables are:
 * code: Records the result of the pitch. See data dictionary for list of codes and their meaning
