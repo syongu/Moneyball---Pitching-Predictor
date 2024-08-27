@@ -83,7 +83,7 @@ Considering the accuracy, class imbalance and ease to use, our first choice for 
 ### Cluster
 
 To better capture the pitchers' "habit", K-mean clustering is conducted for all 1511 pitchers. They are divided into 3 groups and will have models with different parameters for prediction.
-| Accuracy      |Number of Pitcher| Ball/Strike Model| Accuracy | Pitch Type Model| Accuracy |
+|       |Number of Pitcher| Ball/Strike Model| Accuracy | Pitch Type Model| Accuracy |
 | ------------- |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
 |   Cluster 1   |1007| Ensemble Learning | 0.55 |Logistic Regression| 0.43|
 |   Cluster 2   |383| Ensemble learning | 0.53 |Random Forest| 0.40|
